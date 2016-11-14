@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+ <package name="proreport" namespace="/proreport"
+    extends="struts-default">
+	
+	   <global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		
+		
+		<action name="proreportone_*" method="{1}"
+			class="com.fjsdfx.starerp.proreport.action.ProreportoneAction">
+			<result name="list">/WEB-INF/proreport/proreportone.jsp</result>
+			<result name="add_input">/WEB-INF/proreport/proreportone_addinfo.jsp</result>
+			<result name="edit_input">/WEB-INF/proreport/proreportone_editinfo.jsp</result>
+	        <result name="return_list" type="redirect">proreportone_list</result>
+	    
+		</action>
+			<action name="proreportthree_*" method="{1}"
+			class="com.fjsdfx.starerp.proreport.action.ProreportthreeAction">
+			<result name="list">/WEB-INF/proreport/proreportthree.jsp</result>
+			<result name="add_input">/WEB-INF/proreport/proreportthree_addinfo.jsp</result>
+			<result name="edit_input">/WEB-INF/proreport/proreportthree_editinfo.jsp</result>
+	        <result name="return_list" type="redirect">proreportthree_list</result>
+	    
+		</action>
+			<action name="proreportfive_*" method="{1}"
+			class="com.fjsdfx.starerp.proreport.action.ProreportfiveAction">
+			<result name="list">/WEB-INF/proreport/proreportfive.jsp</result>
+			<result name="add_input">/WEB-INF/proreport/proreportfive_addinfo.jsp</result>
+			<result name="edit_input">/WEB-INF/proreport/proreportfive_editinfo.jsp</result>
+	        <result name="return_list" type="redirect">proreportfive_list</result>
+	    
+		</action>
+		</package>
+		
+
+</struts>

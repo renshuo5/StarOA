@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name= "struts.multipart.maxSize" value="5242880" />
+    <package name="persons.employee" namespace="/persons/employee"
+    extends="struts-default">
+	
+	   <global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		
+		
+		<action name="employee_*" method="{1}"
+			class="com.fjsdfx.starerp.persons.action.EmployeeAction">
+			<result name="list">/WEB-INF/persons/employee/employee_info.jsp</result>
+			<result name="show">/WEB-INF/persons/employee/employee_showinfo.jsp</result>
+			<result name="add_input">/WEB-INF/persons/employee/employee_addinfo.jsp</result>
+			<result name="edit_input">/WEB-INF/persons/employee/employee_editinfo.jsp</result>
+	        <result name="return_list" type="redirect">employee_list</result>
+	        <result name="searchSelect">/WEB-INF/persons/employee/select_employee.jsp</result>
+	        <!-- 人员奖惩的开始 -->
+			<result name="raplist">/WEB-INF/persons/employee/employeeRap_info.jsp</result>	
+			<result name="rapaddinput">/WEB-INF/persons/employee/employeeRap_addinfo.jsp</result> 
+			<result name="rapeditInput" >/WEB-INF/persons/employee/employeeRap_editinfo.jsp</result>
+			<result name="selectInput">/WEB-INF/persons/employee/select_employee.jsp</result>      
+	        <!-- 人员奖惩的结束 -->
+		</action>
+		</package>
+		
+		
+		<package name="persons.department" namespace="/persons/department"
+       extends="struts-default">
+	    <global-results>
+	  		<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		
+		
+		<action name="department_*" method="{1}"
+			class="com.fjsdfx.starerp.persons.action.DepartmentAction">
+			<result name="list">/WEB-INF/persons/department/department_info.jsp</result>
+	
+			<result name="add_input">/WEB-INF/persons/department/department_addinfo.jsp</result>
+			<result name="edit_input">/WEB-INF/persons/department/department_editinfo.jsp</result>
+	        <result name="return_list" type="redirect">employee_list</result>
+		</action>
+		</package>
+		
+		
+		
+		<package name="persons.jobs" namespace="/persons/jobs"
+       extends="struts-default">
+	    <global-results>
+	  		<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		
+		
+		<action name="jobs_*" method="{1}"
+			class="com.fjsdfx.starerp.persons.action.JobsAction">
+			<result name="list">/WEB-INF/persons/jobs/jobs_info.jsp</result>
+		
+			<result name="add_input">/WEB-INF/persons/jobs/jobs_addinfo.jsp</result>
+			<result name="edit_input">/WEB-INF/persons/jobs/jobs_editinfo.jsp</result>
+	        <result name="return_list" type="redirect">employee_list</result>
+		</action>
+		</package>
+		
+		
+		<package name="persons.training" namespace="/persons/training"
+       extends="struts-default">
+	    <global-results>
+	  		<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		
+		
+		<action name="training_*" method="{1}"
+			class="com.fjsdfx.starerp.persons.action.TrainingAction">
+			<result name="list">/WEB-INF/persons/training/training_info.jsp</result>
+		     <result name="searchSelect">/WEB-INF/persons/training/select_training.jsp</result>
+			<result name="add_input">/WEB-INF/persons/training/training_addinfo.jsp</result>
+			<result name="edit_input">/WEB-INF/persons/training/training_editinfo.jsp</result>
+	        <result name="return_list" type="redirect">training_list</result>
+		</action>
+		</package>
+		
+		
+		<package name="persons.ytrainplan" namespace="/persons/ytrainplan"
+       extends="struts-default">
+	    <global-results>
+	  		<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		
+		
+		<action name="ytrainplan_*" method="{1}"
+			class="com.fjsdfx.starerp.persons.action.YtrainplanAction">
+			<result name="list">/WEB-INF/persons/ytrainplan/ytrainplan_info.jsp</result>
+			<result name="add_input">/WEB-INF/persons/ytrainplan/ytrainplan_addinfo.jsp</result>
+			<result name="edit_input">/WEB-INF/persons/ytrainplan/ytrainplan_editeinfo.jsp</result>
+	        
+	        <result name="show">/WEB-INF/persons/ytrainplan/ytrainplan_show.jsp</result>
+		</action>
+		</package>
+		
+		<!-- 人员招聘开始 -->
+		<package name="persons.Recruitment" namespace="/persons/Recruitment"
+       extends="struts-default">
+	    <global-results>
+	  		<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		
+		
+		<action name="recruitment_*" method="{1}"
+			class="com.fjsdfx.starerp.persons.action.RecruitmentAction">
+			<result name="list">/WEB-INF/persons/recruitment/recruitment_info.jsp</result>
+			<result name="ylist">/WEB-INF/persons/recruitment/yrecruitment_list.jsp</result>
+			<result name="add_input">/WEB-INF/persons/recruitment/recruitment_addinfo.jsp</result>
+			<result name="edit_input">/WEB-INF/persons/recruitment/recruitment_editinfo.jsp</result>
+			<result name="yedit_input">/WEB-INF/persons/recruitment/yrecruitment_edite.jsp</result>
+			<result name="edit_input_check">/WEB-INF/persons/recruitment/recruitment_checkeditinfo.jsp</result>
+			<result name="show1">/WEB-INF/persons/recruitment/yrecruitment_show.jsp</result>
+	        <result name="return_list" type="redirect">recruitment_list</result>
+	        <result name="selectInput">/WEB-INF/persons/recruitment/select_recruitment.jsp</result>
+	        <result name="yaddInput">/WEB-INF/persons/recruitment/yrecruitment_add.jsp</result>
+	        <result name="searchSelect">/WEB-INF/persons/recruitment/select_recruitment.jsp</result>
+		</action>
+		</package>
+		<!-- 人员招聘结束 -->
+		
+		
+<package name="persons.Rasmessage" namespace="/persons/Rasmessage"
+       extends="struts-default">
+	    <global-results>
+	  		<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		
+		
+		<action name="rasmessage_*" method="{1}"
+			class="com.fjsdfx.starerp.persons.action.RasmessageAction">
+			<!-- 收发信息开始 -->
+			<result name="list">/WEB-INF/annoucement/Rasmessage/rasmessage_list.jsp</result>
+			<result name="sList">/WEB-INF/annoucement/Rasmessage/sended_list.jsp</result>
+			<result name="selectInput">/WEB-INF/security/select_user.jsp</result>
+			<result name="addInput">/WEB-INF/annoucement/Rasmessage/rasmessage_add.jsp</result>
+			<result name="show">/WEB-INF/annoucement/Rasmessage/rasmessage_show.jsp</result>
+			<result name="replay">/WEB-INF/annoucement/Rasmessage/rasmessage_replay.jsp</result>
+	        <result name="return_list" type="redirect">rasmessage_list</result>
+	        <!-- 收发信息结束 -->
+	         <result name="check">/WEB-INF/controlcenter/button.jsp</result>
+			
+		</action>
+		</package>
+      
+      
+		
+<package name="persons.Rasmessage1" namespace="/persons/Rasmessage1" extends="json-default">
+    	<action name="rasmessage_*" class="com.fjsdfx.starerp.persons.action.RasmessageAction" method="{1}">
+			<result type="json">
+			
+			</result>
+		</action>
+    </package>
+<package name="persons.ytrainplanAjax" namespace="/persons/ytrainplanAjax" extends="json-default">
+    	<action name="ytrainplanAjax_*" class="com.fjsdfx.starerp.persons.action.YtrainplanAction" method="{1}">
+			<result type="json">
+			
+			</result>
+		</action>
+    </package>
+<package name="persons.RecruitmentAjax" namespace="/persons/RecruitmentAjax" extends="json-default">
+    	<action name="RecruitmentAjax_*" class="com.fjsdfx.starerp.persons.action.RecruitmentAction" method="{1}">
+			<result type="json">
+			
+			</result>
+		</action>
+    </package>
+</struts>

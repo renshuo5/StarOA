@@ -1,0 +1,247 @@
+@charset "utf-8";
+
+/*设置所有的字体为微软雅黑*/
+* {
+	font-family: "微软雅黑";
+}
+
+.inputnormal {
+	border: 1px solid #D2D2D2;
+	CURSOR: hand;
+	readonly: true;
+	background-color: #FFFFFF
+}
+
+/*对于body的样式的设置*/
+body {
+	font-size: 12pt;
+	Scrollbar-Face-Color: #A4C6F9;
+	Scrollbar-Highlight-Color: #A4C6F9;
+	Scrollbar-Shadow-Color: #A4C6F9;
+	Scrollbar-3Dlight-Color: 8080FF;
+	Scrollbar-Darkshadow-Color: 8080FF;
+	Scrollbar-Arrow-Color: FFffff;
+	Scrollbar-Track-Color: E6E6FF;
+	text-align: center;
+	background-image: url(../images/1111111.jpg);
+}
+
+/*对于table的样式的设置*/
+table {
+	border-color: #6f8ac4;
+	border-collapse: 1;
+	border-spacing: 2;
+	margin: auto;
+	padding: inherit;
+	width: 100%;
+	border: 0;
+}
+
+/*使得table占据整个页面的70%的设置*/
+.editTable {
+	border-color: #6f8ac4;
+	border-collapse: 1;
+	border-spacing: 2;
+	margin: auto;
+	padding: inherit;
+	width: 85%;
+	border: 0;
+}
+
+/*对于添加、查询等那一行的样式修改*/
+.topTd {
+	text-align: right;
+}
+
+/*标题行的样式定义*/
+.title td {
+	background: url(../images/title_bg2.jpg);
+	color: #fff;
+	align: center;
+}
+
+/*使得表占据页面的85%的设置*/
+.addTable {
+	width: 85%;
+}
+
+/*对于背景色为灰白色的设置，设置一个类，作用到td层   所有属于addTable这个类下的td都可以使用这些属性*/
+.addTable td {
+	font-size: 12pt;
+	line-height: 14pt;
+	background-color: #f5f5f5;
+}
+
+/*对于类list里面a标签的颜色的设置*/
+.list a {
+	color: #039;
+}
+
+/*对于表头的样式设置*/
+th {
+	font-size: 13pt;
+	font-weight: normal;
+	line-height: 14pt;
+	color: #ffffff;
+	background-color: #266cc1;
+}
+
+/*对于td标签的样式的设置*/
+td {
+	font-size: 15px;
+	color: #000;
+	text-align: center;
+}
+
+/*对于编辑框的左边字段的设置*/
+.tdleft {
+	font-size: 15px;
+	color: #000;
+	text-align: left;
+}
+
+/*对于编辑框的右边输入框的设置*/
+.tdright {
+	font-size: 15px;
+	color: #000;
+	text-align: right;
+	width: 30%;
+}
+
+/*采购订单专用，对于编辑框的右边输入框的设置*/
+.tdrightpur {
+	font-size: 15px;
+	color: #000;
+	text-align: right;
+	width: 10%;
+}
+
+/*对于显示页面的右边文本框的设置*/
+.textRight {
+	text-align: right;
+}
+
+/*对于显示页面的左边文本框的设置*/
+.textLeft {
+	text-align: left;
+	width: 70%;
+}
+
+/*对于按钮的样式的设置*/
+.frm_btn {
+	BORDER-TOP-WIDTH: 1px;
+	BORDER-LEFT-WIDTH: 1px;
+	BORDER-BOTTOM-WIDTH: 1px;
+	COLOR: #ffffff;
+	BACKGROUND-COLOR: #4289cb;
+	BORDER-RIGHT-WIDTH: 1px;
+}
+
+/*提交按钮的表格设置*/
+table.btn {
+	font-size: 12pt;
+	line-height: 14pt;
+	background-color: #f5f5f5;
+	width: 85%;
+}
+
+/*对于链接的几种状态的设置*/
+A.a03:link {
+	text-decoration: none;
+	color: #ffffff;
+}
+
+A.a03:visited {
+	text-decoration: none;
+	color: #ffffff;
+}
+
+A.a03:active {
+	text-decoration: none;
+	color: #ffffff;
+}
+
+A.a03:hover {
+	text-decoration: underline;
+	color: #ffffff;
+}
+
+A:link {
+	COLOR: #039;
+	text-decoration: none;
+}
+
+A:visited {
+	COLOR: #039;
+	text-decoration: none;
+}
+
+A:hover {
+	COLOR: #f60;
+	text-decoration: none;
+}
+
+/*对于奇数行颜色的设置*/
+.oddRow {
+	background-color: #f5f5f5;
+}
+
+/*对于偶数行颜色的设置*/
+.evenRow {
+	background-color: #DBE6E3;
+}
+
+/*对于分页的设置*/
+.pager {
+	font-size: 6pt;
+	background-color: #266cc1;
+	color: #FFF;
+}
+
+/*分页的链接颜色的设置*/
+.pager a:link {
+	COLOR: #fff;
+	text-decoration: none;
+}
+
+.pager a:visited {
+	COLOR: #fff;
+	text-decoration: none;
+}
+
+.pager a:hover {
+	COLOR: #fff;
+	text-decoration: none;
+}
+
+/*menu中的标志性图片的设置*/
+img {
+	border: 0px;
+}
+
+/*审核的span的属性设置*/
+.examine span {
+	border-width: 0px;
+}
+
+/*已审核的图片的属性*/
+a.examineGreen {
+	text-decoration: none;
+	cursor: default;
+	background: repeat-x;
+	background-image: url(../images/examine_bg_green.jpg);
+}
+
+/*未审核的图片的属性*/
+a.examineRed {
+	background: repeat-x;
+	background-image: url(../images/examine_bg_red.jpg);
+}
+
+/*不可审核的图片的属性*/
+a.examineGray{
+	text-decoration:none;
+	cursor:default;
+	background:repeat-x;
+	background-image:url(<%=basePath %>images/examine_bg_gray.jpg);
+}

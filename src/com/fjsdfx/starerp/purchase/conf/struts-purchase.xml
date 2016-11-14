@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="purchase.task" namespace="/purchase/task"
+		extends="struts-default">
+		<action name="task_*" method="{1}"
+			class="com.fjsdfx.starerp.purchase.action.TaskAction">
+			<result name="add_input">/WEB-INF/purchase/add_task.jsp</result>
+			<result name="show_tree">/WEB-INF/purchase/task_tree.jsp</result>
+		</action>
+	</package>
+
+                  <!-- **********supplierinfo********** -->
+                  
+	<package name="purchase.supplierinfo" namespace="/purchase/supplierinfo"
+		extends="struts-default">
+		<global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception"
+				exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception"
+				exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		<action name="supplierinfo_*" method="{1}"
+			class="com.fjsdfx.starerp.purchase.action.SupplierinfoAction">
+			<result name="list">/WEB-INF/purchase/supplierinfo/supplierinfolist.jsp</result>
+			<result name="show">/WEB-INF/purchase/supplierinfo/show_supplierinfo.jsp</result>
+			<result name="edit_input">/WEB-INF/purchase/supplierinfo/edit_supplierinfo.jsp</result>
+			<result name="examine_input">/WEB-INF/purchase/supplierinfo/examine_supplierinfo.jsp</result>
+			<result name="add_input">/WEB-INF/purchase/supplierinfo/add_supplierinfo.jsp</result>
+			<result name="select_input">/WEB-INF/purchase/supplierinfo/select_supplierinfo.jsp</result>
+
+			<!--
+				<result
+				name="edit_input">/WEB-INF/annoucement/edit_annoucement.jsp</result>
+			-->
+			<result name="return_list" type="redirect">supplierinfo_list</result>
+		</action>
+	</package>
+
+                  <!-- **********supplierinfo********** -->
+                  
+                  <!-- **********quaprolist********** -->
+
+	<package name="purchase.quaprolist" namespace="/purchase/quaprolist"
+		extends="struts-default">
+		<global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception"
+				exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception"
+				exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		<action name="quaprolist_*" method="{1}"
+			class="com.fjsdfx.starerp.purchase.action.QuaprolistAction">
+			<result name="list">/WEB-INF/purchase/quaprolist/quaprolist.jsp</result>
+			<result name="show">/WEB-INF/purchase/quaprolist/show_quaprolist.jsp</result>
+			<result name="add_input">/WEB-INF/purchase/quaprolist/add_quaprolist.jsp</result>
+			<result name="edit_input">/WEB-INF/purchase/quaprolist/edit_quaprolist.jsp</result>
+			<result name="select_input">/WEB-INF/purchase/quaprolist/select_quaprolist.jsp</result>
+
+			<!--
+				<result
+				name="edit_input">/WEB-INF/annoucement/edit_annoucement.jsp</result>
+			-->
+			<result name="return_list" type="redirect">quaprolist_list</result>
+		</action>
+	</package>
+	              <!-- **********quaprolist********** -->
+	
+                  <!-- **********requisitions********** -->
+                  
+	<package name="purchase.requisitions" namespace="/purchase/requisitions"
+		extends="struts-default">
+		<global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception"
+				exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception"
+				exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		<action name="requisitions_*" method="{1}"
+			class="com.fjsdfx.starerp.purchase.action.RequisitionsAction">
+			<result name="list">/WEB-INF/purchase/requisitions/requisitionslist.jsp</result>
+			<result name="show">/WEB-INF/purchase/requisitions/show_requisitions.jsp</result>
+			<result name="enter">/WEB-INF/purchase/requisitions/enter_requisitions.jsp</result>
+			<result name="edit_input">/WEB-INF/purchase/requisitions/edit_requisitions.jsp</result>
+			<result name="examine_input">/WEB-INF/purchase/requisitions/examine_requisitions.jsp</result>
+			<result name="add_input">/WEB-INF/purchase/requisitions/add_requisitions.jsp</result>
+			<result name="select_input">/WEB-INF/purchase/requisitions/select_requisitions.jsp</result>
+
+			<!--
+				<result
+				name="edit_input">/WEB-INF/annoucement/edit_annoucement.jsp</result>
+			-->
+			<result name="return_list" type="redirect">requisitions_list</result>
+		</action>
+	</package>
+
+                  <!-- **********requisitions********** -->
+                  
+                  <!-- **********purorder********** -->
+                  
+	<package name="purchase.purorder" namespace="/purchase/purorder"
+		extends="struts-default">
+		<global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception"
+				exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception"
+				exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		<action name="purorder_*" method="{1}"
+			class="com.fjsdfx.starerp.purchase.action.PurorderAction">
+			<result name="list">/WEB-INF/purchase/requisitions/purorderlist.jsp</result>
+			<result name="show">/WEB-INF/purchase/requisitions/show_purorder.jsp</result>
+			<result name="enter">/WEB-INF/purchase/requisitions/enter_purorder.jsp</result>
+			<result name="edit_input">/WEB-INF/purchase/requisitions/edit_purorder.jsp</result>
+			<result name="examine_input">/WEB-INF/purchase/requisitions/examine_purorder.jsp</result>
+			<result name="add_input">/WEB-INF/purchase/requisitions/add_purorder.jsp</result>
+			<result name="select_input">/WEB-INF/purchase/requisitions/select_purorder.jsp</result>
+
+			<!--
+				<result
+				name="edit_input">/WEB-INF/annoucement/edit_annoucement.jsp</result>
+			-->
+			<result name="return_list" type="redirect">purorder_list</result>
+		</action>
+	</package>
+
+                  <!-- **********purorder********** -->
+                  <!-- **********samidentified********** -->
+                  
+	<package name="purchase.samidentified" namespace="/purchase/samidentified"
+		extends="struts-default">
+		<global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception"
+				exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception"
+				exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		<action name="samidentified_*" method="{1}"
+			class="com.fjsdfx.starerp.purchase.action.SamidentifiedAction">
+			<result name="list">/WEB-INF/purchase/samidentified/samidentifiedlist.jsp</result>
+			<result name="show_test">/WEB-INF/purchase/samidentified/show_samidentified_test.jsp</result>
+			<result name="show">/WEB-INF/purchase/samidentified/show_samidentified.jsp</result>
+			<result name="edit_input">/WEB-INF/purchase/samidentified/edit_samidentified.jsp</result>
+			<result name="add_input">/WEB-INF/purchase/samidentified/add_samidentified.jsp</result>
+			<result name="examine">/WEB-INF/purchase/samidentified/examine_samidentified.jsp</result>
+			<result name="resper_exam">/WEB-INF/purchase/samidentified/resperexam_samidentified.jsp</result>
+			<result name="examine_list">/WEB-INF/purchase/samidentified/examine_samidentified_list.jsp</result>
+
+			<!--
+				<result
+				name="edit_input">/WEB-INF/annoucement/edit_annoucement.jsp</result>
+			-->
+			<result name="return_list" type="redirect">samidentified_list</result>
+		</action>
+	</package>
+
+                  <!-- **********samidentified********** -->
+                  <!-- **********testnotes********** -->
+                  
+	<package name="purchase.testnotes" namespace="/purchase/testnotes"
+		extends="struts-default">
+		<global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception"
+				exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception"
+				exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		<action name="testnotes_*" method="{1}"
+			class="com.fjsdfx.starerp.purchase.action.TestnotesAction">
+			<result name="trackingtest_addlist">/WEB-INF/purchase/testnotes/trackingtest_addlist.jsp</result>
+			<result name="list">/WEB-INF/purchase/testnotes/testnoteslist.jsp</result>
+			<result name="show">/WEB-INF/purchase/testnotes/show_testnotes.jsp</result>
+			<result name="edit_input">/WEB-INF/purchase/testnotes/edit_testnotes.jsp</result>
+			<result name="add_input">/WEB-INF/purchase/testnotes/add_testnotes.jsp</result>
+			<result name="samid_list">/WEB-INF/purchase/testnotes/testnotes_samidentified_list.jsp</result>
+			<result name="examine">/WEB-INF/purchase/testnotes/examine_testnotes.jsp</result>
+			<result name="pur_exam">/WEB-INF/purchase/testnotes/purexam_testnotes.jsp</result>
+			<result name="examine_list">/WEB-INF/purchase/testnotes/examine_testnotes_list.jsp</result>
+			<result name="shownotes">/WEB-INF/purchase/testnotes/testnotesaddtrackingtest.jsp</result>
+
+			<!--
+				<result
+				name="edit_input">/WEB-INF/annoucement/edit_annoucement.jsp</result>
+			-->
+			<result name="return_list" type="redirect">testnotes_list</result>
+		</action>
+	</package>
+
+                  <!-- **********testnotes********** -->
+                  <!-- **********spare********** -->
+                  
+	<package name="purchase.spare" namespace="/purchase/spare"
+		extends="struts-default">
+		<global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception"
+				exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception"
+				exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		<action name="spare_*" method="{1}"
+			class="com.fjsdfx.starerp.purchase.action.SpareAction">
+			<result name="list">/WEB-INF/purchase/spare/sparelist.jsp</result>
+			<result name="show">/WEB-INF/purchase/spare/show_spare.jsp</result>
+			<result name="edit_input">/WEB-INF/purchase/spare/edit_spare.jsp</result>
+			<result name="add_input">/WEB-INF/purchase/spare/add_spare.jsp</result>
+
+			<!--
+				<result
+				name="edit_input">/WEB-INF/annoucement/edit_annoucement.jsp</result>
+			-->
+			<result name="return_list" type="redirect">spare_list</result>
+		</action>
+	</package>
+
+                  <!-- **********spare********** -->
+                  <!-- **********supidentified********** -->
+                  
+	<package name="purchase.supidentified" namespace="/purchase/supidentified"
+		extends="struts-default">
+		<global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception"
+				exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception"
+				exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		<action name="supidentified_*" method="{1}"
+			class="com.fjsdfx.starerp.purchase.action.SupidentifiedAction">
+			<result name="list">/WEB-INF/purchase/supidentified/supidentifiedlist.jsp</result>
+			<result name="show">/WEB-INF/purchase/supidentified/show_supidentified.jsp</result>
+			<result name="show_samidentified">/WEB-INF/purchase/supidentified/samidentified_supidentified_show.jsp</result>
+			<result name="edit_input">/WEB-INF/purchase/supidentified/edit_supidentified.jsp</result>
+			<result name="add_input">/WEB-INF/purchase/supidentified/add_supidentified.jsp</result>
+			<result name="toadd">/WEB-INF/purchase/supidentified/toadd_supidentifiedlist.jsp</result>
+			<result name="samid_list">/WEB-INF/purchase/supidentified/supidentified_samidentified_list.jsp</result>
+			<result name="examine">/WEB-INF/purchase/supidentified/examine_supidentified.jsp</result>
+			<result name="pur_examine">/WEB-INF/purchase/supidentified/purexamine_supidentified.jsp</result>
+			<result name="examine_list">/WEB-INF/purchase/supidentified/examine_supidentified_list.jsp</result>
+			<result name="addTo_quaplist">/WEB-INF/purchase/quaprolist/add_quaprolist.jsp</result>
+
+			<!--
+				<result
+				name="edit_input">/WEB-INF/annoucement/edit_annoucement.jsp</result>
+			-->
+			<result name="return_list" type="redirect">supidentified_list</result>
+		</action>
+	</package>
+
+                  <!-- **********supidentified********** -->
+
+</struts>

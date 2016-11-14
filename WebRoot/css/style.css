@@ -1,0 +1,199 @@
+@charset "utf-8";
+/* CSS Document */
+  
+body {
+	padding: 0;
+	margin: 0 0 0 0 ;
+	line-height: 1.5em;
+	background: #fff;
+ 	font-family: "宋体", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	margin:auto
+	
+}
+img { border:0px;}
+
+a {	color: #4B4B4B;	 text-decoration: none;}
+a:link { color: #4B4B4B;  text-decoration: none;}
+a:hover { color: #FF7200;  text-decoration: underline;}
+.header { 
+	height: 80PX;
+	width:1003px;
+	background: url(top_bak1.jpg) no-repeat #08107B;;
+	color: #808080;
+	margin:auto;
+ }
+ /*内页头*/
+ .header-neiy { 
+	height: 80PX;
+	width:770px;
+	background: url(top_bak1.jpg) no-repeat #08107B;;
+	color: #808080;
+	margin:auto;
+ }
+.logo {
+  	margin:10px 0px 0px  40px;
+	float:left;
+ }
+ .search {
+	float: right;
+  	margin:30px 25px 0px 0px;
+	color:#ffffff;
+ 	height:30px;
+	vertical-align: middle;
+	line-height:30px;
+	
+ }
+.search input{ height:15px;vertical-align: middle}
+.search img{vertical-align: middle}
+ 
+ .content { 
+ 	width:1003px;
+      margin:auto;
+	  height:inherit;
+ 	background:url(main_bak.jpg)  repeat-x #ffffff;
+ }
+ .conter_info {
+   width:938px;
+   margin:auto;
+    background:url(content_1.gif) top no-repeat;
+	height:8px;
+    }
+ .conter_info2{
+ width:938px;
+   margin:auto;
+    border-right:1px solid #efefef;
+   border-left:1px solid #efefef;
+   background:#ffffff;
+     }
+.conter_left{ 
+float:left;
+width:435px;
+  border-right:dotted 1px #C4C4C4;
+  }
+.conter_mid{ 
+float:left;
+width:370px ;
+  margin:0px 3px 0px 3px;
+   }
+ .conter_right{ 
+float: right;
+ width:90px ;
+margin:0px 3px 0px 3px;
+text-align:left;
+   } 
+   .newtitel_left {background: url(menu_bak_more.png)  no-repeat; height:24px; width:190px; padding:3px; color:#08107B; font-weight:bold;   float:left; margin-left:10px;}
+   .newtitel_right{background: url(menu_bak_more.png) no-repeat; height:24px; width:190px; padding:3px; color:#08107B; font-weight:bold; float: right; margin-right:20px;}
+   .newlist{ width:430px; margin-left:10px;}
+     .newlistli1{ width:180px; float:left; padding-right:10px; margin-left:5px; list-style-type:none}
+   .newlistli2{ width:180px; float:left;  margin-left:40px;list-style-type:none}
+
+   
+   .newlist_left{ width:195px; margin-left:10px;   margin-bottom:5px; float:left; margin-top:5px; float:left; }
+     .newlist_right{ width:195px; margin-left:10px;   margin-bottom:5px; float:left; margin-top:5px; float:right}
+    /*以下为文字链接*/
+   .about:link { color:#FF7200; font-size:12px;}
+   .about:visited {
+	color:#FF7200;
+	font-size:12px;
+ }
+  .about:hover{ color:#4c4c4c; font-size:12px;text-decoration: underline;}
+ .about1:link{ color:#000000; font-size:12px;}
+  .about1:visited{ color:#000000; font-size:12px;}
+ .about1:hover{ color:#FF7200; font-size:12px;}
+ .newstop:link { color:#FF7200; font-size:14px; font-weight:bold }
+ .newstop:visited { color:#FF7200; font-size:14px; font-weight:bold ;text-decoration: underline;}
+  .newstop:hover { color:#4B4B4B; font-size:14px; font-weight:bold }
+   .more:link { color:#FF3333; font-size:9px; font-family:arial;  }
+ .more:visited { color:#FF3333; font-size:9px; font-family:arial ;text-decoration: underline;}
+  .more:hover { color:#4B4B4B; font-size:9px;  font-family:arial}
+  /*首页图特效*/
+.thumbnail{position:relative;z-index:1; width:100px; }
+.thumbnail:hover{position:relative;background-color:transparent;z-index:901;}
+.thumbnail span{
+	position:absolute;
+	background-color:#ffffff;
+	left:-1000px;
+	border:1px dashed gray;
+	color:#000;
+	text-decoration:none;
+	padding:1px;
+	visibility: hidden;
+	z-index:902;
+	
+}
+.thumbnail span img{border-width:0;padding:2px;}
+.thumbnail:hover span{visibility:visible;top:-30px;left:60px;}
+ /*点图放大*/
+ 
+   
+/*页脚*/
+
+
+.foot  { background:url(foot.jpg) repeat-x; height:39px; width:1003px; margin:auto; color:#ffffff; line-height:39px; text-indent:80px; }
+
+.foot a:link{
+	color:#ffffff;
+	font-size:12px;
+	text-decoration: none;
+	font-family:宋体
+}
+.foot a:visited{color:#ffffff; font-size:12px; }
+.foot a:hover{color:#ff0000; font-size:12px;text-decoration: underline;}
+/*内页页脚*/
+.foot-neiy  { background:url(foot.jpg) repeat-x; height:39px; width:770px; margin:auto; color:#ffffff; line-height:39px; text-indent:80px; }
+.foot-neiy a:link{
+	color:#ffffff;
+	font-size:12px;
+	text-decoration: none;
+	font-family:宋体
+}
+.foot-neiy a:visited{color:#ffffff; font-size:12px; }
+.foot-neiy a:hover{color:#ff0000; font-size:12px;text-decoration: underline;}
+
+
+
+/*更多产品*/
+#lists {padding:0; margin:0 0 0 0; list-style:none; position:relative; height:25px; float:left; z-index:500;} /* margins for this demonstration only */
+#lists li {display:inline; float:left;; height:25px; background:url(line.gif) no-repeat 0 4px;}
+#lists li a.tl {display:block;   height:25px; text-decoration:none; line-height:20px; font-size:12px; font-weight:bold; text-indent:10px; font-weight:normal; color:#000; }
+
+#lists div {display:none;}
+
+#lists li a:hover {text-decoration:underline; white-space:normal; background-position:130px 15px;}
+#lists li:hover > a {text-decoration:underline; white-space:normal; background-position:130px 15px;}
+
+#lists :hover div
+{display:block; width:398px; background:#F1F9FC; position:absolute; left:25px; top:-20px; border:1px solid #888; font-size:12px;}
+#lists :hover div.pos2 {display:block; width:398px; background:#F1F9FC; position:absolute; left:28px; top:-20px; border:1px solid #888; font-size:12px;}
+
+#lists :hover div.pos3 {display:block; width:398px; background:#F1F9FC; position:absolute; left:25px; top:-80px; border:1px solid #888; font-size:12px;}
+
+
+#lists :hover div.pos4 {display:block; width:398px; background:#F1F9FC; position:absolute; left:28px; top:-80px; border:1px solid #888; font-size:12px;}
+
+#lists :hover div.pos2  a:hover{color:#FF3333; font-size:12px;}
+
+#lists .two:hover {position:relative;}
+#lists .single:hover {position:relative;}
+
+#lists .two:hover div.pos3 {background:#f5eef0; width:300px;}
+#lists .single:hover div.pos4 {background:#ffefd5; width:150px;}
+
+#lists :hover div dl {display:inline; padding:0; margin:0 10px 10px 10px; float:left; width:179px;}
+#lists :hover div dl dt {width:138px; background:#888; text-indent:10px; margin:5px 0 10px 0; text-decoration:none; height:20px; line-height:20px;}
+
+#lists .two:hover div {left:-150px;}
+#lists .two:hover div dl {width:129px;}
+#lists .two:hover div dl dt {width:129px;}
+
+#lists .single:hover div dl {width:129px;}
+#lists .single:hover div dl dt {width:129px;}
+
+#lists :hover div dl dd {padding:0; margin:0; }
+
+#lists :hover div dt a {text-decoration:none; cursor:default;  color:#fff;}
+#lists :hover div dd a { text-decoration:none; font-size:11px; color:#000000;line-height:15px; font-weight: normal; font-family: Arial, Helvetica, sans-serif,"宋体"}
+#lists :hover div dd a:hover {text-decoration:underline; color:#ff0000; font-size:12px; font-weight:bold}
+
+#lists .clear {clear:both;}

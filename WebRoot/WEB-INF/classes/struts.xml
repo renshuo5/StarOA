@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<!--=============================导入其他配置文件=====================================================-->
+
+	<include file="com/fjsdfx/starerp/item/conf/struts-item.xml" />
+	<include file="com/fjsdfx/starerp/warehouse/conf/struts-warehouse.xml" />
+	<include file="com/fjsdfx/starerp/security/conf/struts-security.xml" />
+	<include file="com/fjsdfx/starerp/annoucement/conf/struts-annoucement.xml" />
+	<include file="com/fjsdfx/starerp/sales/conf/struts-sales.xml" />
+	<include file="com/fjsdfx/starerp/purchase/conf/struts-purchase.xml" />
+    <include file="com/fjsdfx/starerp/produce/conf/struts-produce.xml"/>
+    <include file="com/fjsdfx/starerp/menu/conf/struts-menu.xml"/>
+    <include file="com/fjsdfx/starerp/persons/conf/struts-persons.xml" />
+     <include file="com/fjsdfx/starerp/proreport/conf/struts-proreport.xml" />
+<!--================================主页==================================================-->
+	<package name="index" namespace="/controlcenter" extends="struts-default">
+		<action name="index">
+			<result>/WEB-INF/controlcenter/index.jsp</result>
+		</action>
+		<action name="header">
+			<result>/WEB-INF/controlcenter/header.jsp</result>
+		</action>
+		<action name="personalCenter">
+			<result>/WEB-INF/controlcenter/personalCenter.htm</result>
+		</action>
+		
+		
+		<action name="navigate">
+			<result type="redirect">/menu/navigate</result>
+		</action>
+		<action name="main">
+			<result>/WEB-INF/controlcenter/main.jsp</result>
+		</action>
+	</package>
+<!--==================================================================================-->
+</struts>

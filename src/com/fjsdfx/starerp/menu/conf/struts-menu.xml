@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="menu" namespace="/menu" extends="struts-default">
+		<action name="*" method="{1}"
+			class="com.fjsdfx.starerp.menu.action.MenuAction">
+			<result name="navigate">/WEB-INF/controlcenter/navigate.jsp</result>
+			<result name="personalCenter">/menu/personalCenter.jsp</result>
+			<result name="personalmanage">/menu/personalmanage.jsp</result>
+			<result name="procurement">/menu/procurement.jsp</result>
+			<result name="product">/menu/product.jsp</result>
+			<result name="qualitycontrol">/menu/qualitycontrol.jsp</result>
+			<result name="systemmanage">/menu/systemmanage.jsp</result>
+			<result name="warehouse">/menu/warehouse.jsp</result>
+			<result name="success">/menu/menu.jsp</result>
+		</action>
+	</package>
+</struts>

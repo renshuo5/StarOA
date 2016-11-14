@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+<!--======================================resource=============================================-->
+	<package name="security.resource" namespace="/security/resource"
+		extends="struts-default">
+		<global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		<action name="resource_*" method="{1}"
+			class="com.fjsdfx.starerp.security.action.ResourceAction">
+			<result name="show">/WEB-INF/security/showresource.jsp</result>
+			<result name="list">/WEB-INF/security/allresourcelist.jsp</result>
+			<result name="add_input">/WEB-INF/security/add_resource.jsp</result>
+			<result name="edit_input">/WEB-INF/security/edit_resource.jsp</result>
+			<result name="del_exception">/WEB-INF/security/resource_del_exception.jsp</result>
+			<result name="restart_server">/WEB-INF/security/server_restart.jsp</result>
+		</action>
+	</package>
+
+<!--======================================role=====================================================-->
+
+<package name="security.role" namespace="/security/role"
+		extends="struts-default">
+		<global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		<action name="role_*" method="{1}"
+			class="com.fjsdfx.starerp.security.action.RoleAction">
+			<result name="list">/WEB-INF/security/rolelist.jsp</result>
+			<result name="add_input">/WEB-INF/security/add_role.jsp</result>
+			<result name="edit_input">/WEB-INF/security/edit_role.jsp</result>
+			<result name="return_list" type="redirect">role_list</result>
+			<result name="del_exception">/WEB-INF/security/role_del_exception.jsp</result>
+			<result name="restart_server">/WEB-INF/security/server_restart.jsp</result>
+			</action>
+			
+			</package>
+			
+			
+<!--======================================user=====================================================-->
+<package name="security.user" namespace="/security/user"
+		extends="struts-default">
+		<global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		<action name="user_*" method="{1}"
+			class="com.fjsdfx.starerp.security.action.UserAction">
+			<result name="list">/WEB-INF/security/userlist.jsp</result>
+			<result name="add_input">/WEB-INF/security/add_user.jsp</result>
+			<result name="edit_input">/WEB-INF/security/edit_user.jsp</result>
+			<result name="return_list" type="redirect">user_list</result>
+			<result name="select_input">/WEB-INF/security/select_user.jsp</result>
+			<result name="select_input">/WEB-INF/security/select_user.jsp</result>
+			<result name="edit_password">/WEB-INF/security/edit_password.jsp</result>
+			<result name="password_save_success">/WEB-INF/security/password_save_success.jsp</result>
+			<result name="password_save_error">/WEB-INF/security/password_save_error.jsp</result>
+			
+			</action>
+			
+			</package>
+			<!--以下是菜单选择的相关ajax操作 -->
+			
+		<package name="ajax" extends="json-default" namespace="/security/resourceAjax">
+		  <action name="resource_*" method="{1}"
+			class="com.fjsdfx.starerp.security.action.ResourceAction">
+			<result name="menajax" type="json" />
+			<result name="itemmenuAjax" type="json" />
+			
+			</action>
+		
+		
+		</package>
+</struts>

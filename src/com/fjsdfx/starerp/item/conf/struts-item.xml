@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	
+<!--物料类别-->
+	<package name="item.itemtype" namespace="/item/itemtype" extends="struts-default">
+	<global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+	
+		<action name="itemtype_*" method="{1}" class="com.fjsdfx.starerp.item.action.ItemTypeAction">
+			<result name="list">/WEB-INF/item/itemtypelist.jsp</result>
+			<result name="add_input">/WEB-INF/item/add_itemtype.jsp</result>
+			<result name="edit_input">/WEB-INF/item/edit_itemtype.jsp</result>
+			<result name="input">/WEB-INF/item/select_itemtype.jsp</result>
+			<result name="select_input">/WEB-INF/item/select_itemtype.jsp</result>
+			<result name="show">/WEB-INF/item/itemtypeshow.jsp</result>
+		</action>
+	</package>
+	
+<!--物料	-->
+	<package name="item.item" namespace="/item/item" extends="struts-default">
+		<global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		
+		<action name="item_*" method="{1}" class="com.fjsdfx.starerp.item.action.ItemAction">
+		<result name="list">/WEB-INF/item/itemlist.jsp</result>
+		<result name="add_input">/WEB-INF/item/add_item.jsp</result>
+		<result name="select_input">/WEB-INF/item/select_item.jsp</result>
+		<result name="edit_input">/WEB-INF/item/edit_item.jsp</result>
+		<result name="return_list" type="redirect">item_list</result>
+		</action>
+		
+		
+	</package>
+<!-- json start -->
+	<!-- item start -->	
+	<package name="item.ajax" namespace="/item/itemverify" extends="json-default">
+    	<action name="item_*" class="com.fjsdfx.starerp.item.action.ItemAction" method="{1}">
+			<result type="json">
+			
+			</result>
+		</action>
+    </package>
+    <!-- item end -->
+    <!-- itemType start -->
+    <package name="itemType.ajax" namespace="/itemType/itemtypeverify" extends="json-default">
+    	<action name="itemType_*" class="com.fjsdfx.starerp.item.action.ItemTypeAction" method="{1}">
+			<result type="json">
+			
+			</result>
+		</action>
+    </package>
+<!-- json end -->	
+	
+</struts>

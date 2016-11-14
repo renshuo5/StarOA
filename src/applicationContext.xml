@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd ">
+
+	<context:annotation-config />
+	
+	<context:component-scan base-package="com.fjsdfx.starerp" />
+
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+	 <property name="configLocation" value="classpath:hibernate.cfg.xml" />
+		<property name="packagesToScan">
+			<list>
+				<value>com.fjsdfx.starerp.item.model</value>
+				<value>com.fjsdfx.starerp.produce.model</value>
+				<value>com.fjsdfx.starerp.annoucement.model</value>
+				<value>com.fjsdfx.starerp.persons.model</value>
+				<value>com.fjsdfx.starerp.warehouse.model</value>
+				<value>com.fjsdfx.starerp.proreport.model</value>	
+				<value>com.fjsdfx.starerp.sales.model</value>
+				<value>com.fjsdfx.starerp.security.model</value>
+				<value>com.fjsdfx.starerp.purchase.model</value>
+				<value>com.fjsdfx.starerp.menu.model</value>
+			</list>
+		</property>
+	</bean>
+	
+		<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="txManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	
+	<tx:advice id="txAdvice" transaction-manager="txManager">
+		<tx:attributes>
+			<tx:method name="*" propagation="REQUIRED" />
+		</tx:attributes>
+	</tx:advice>
+	<!--	<aop:config>-->
+	<!--		<aop:pointcut id="managerTx"-->
+	<!--			expression="execution(public * edu.sjx.oa.manager.*.*(..))" />-->
+	<!--		<aop:advisor pointcut-ref="managerTx" advice-ref="txAdvice" />-->
+	<!--	</aop:config>-->
+	<tx:annotation-driven transaction-manager="txManager" />
+	
+	<!--  Transaction interceptor  -->
+	<bean id="transactionInterceptor" class="org.springframework.transaction.interceptor.TransactionInterceptor">
+         <property name="transactionManager" ref="txManager" />
+         <property name="transactionAttributes">
+              <props>
+                   <prop key="*">PROPAGATION_REQUIRED</prop>
+              </props>
+         </property>
+    </bean>
+
+	<!-- BeanName auto proxy to define the interceptor -->
+    <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+         <property name="beanNames">
+              <list>
+                   <value>*ServiceImpl</value>
+              </list>
+         </property>
+         <property name="interceptorNames">
+              <list>
+                   <value>transactionInterceptor</value>
+              </list>
+         </property>
+     </bean>
+
+</beans>

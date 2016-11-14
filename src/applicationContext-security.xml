@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+    xmlns:beans="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+                        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-2.0.4.xsd">
+	
+	<beans:bean id="loggerListener" class="org.springframework.security.event.authentication.LoggerListener" />
+	
+	<http access-denied-page="/403.jsp" >
+		<intercept-url pattern="/static/**" filters="none" />
+		<intercept-url pattern="/template/**" filters="none" />
+		<intercept-url pattern="/" filters="none" />
+		<intercept-url pattern="/login.jsp" filters="none" />
+	    <form-login login-page="/login.jsp" authentication-failure-url="/login.jsp?error=true" default-target-url="/controlcenter/index" />
+	    <logout logout-success-url="/login.jsp"/>
+	    <http-basic />
+	</http>
+
+	<authentication-manager alias="authenticationManager"/>
+	
+	<authentication-provider user-service-ref="securityManager">
+		<password-encoder hash="md5"/>
+	</authentication-provider>
+	
+	<beans:bean id="accessDecisionManager" class="org.springframework.security.vote.AffirmativeBased">
+	    <beans:property name="allowIfAllAbstainDecisions" value="false"/>
+	    <beans:property name="decisionVoters">
+	        <beans:list>
+	            <beans:bean class="org.springframework.security.vote.RoleVoter"/>
+	            <beans:bean class="org.springframework.security.vote.AuthenticatedVoter"/>
+	        </beans:list>
+	    </beans:property>
+	</beans:bean>
+	
+	<beans:bean id="resourceSecurityInterceptor" class="org.springframework.security.intercept.web.FilterSecurityInterceptor">
+		<beans:property name="authenticationManager" ref="authenticationManager"/>
+	    <beans:property name="accessDecisionManager" ref="accessDecisionManager"/>
+	    <beans:property name="objectDefinitionSource" ref="secureResourceFilterInvocationDefinitionSource" />
+	    <beans:property name="observeOncePerRequest" value="false" />
+	    <custom-filter after="LAST" />
+	</beans:bean>
+	
+	<beans:bean id="secureResourceFilterInvocationDefinitionSource" class="com.fjsdfx.starerp.security.interceptor.SecureResourceFilterInvocationDefinitionSource" />
+	
+</beans:beans>

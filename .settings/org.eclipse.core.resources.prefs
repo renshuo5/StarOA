@@ -1,0 +1,13 @@
+#Sat Jan 01 23:17:49 CST 2011
+eclipse.preferences.version=1
+encoding//WebRoot/WEB-INF/external/external.jsp=UTF-8
+encoding//WebRoot/WEB-INF/sales/qualityanalysis/edit_qualityanalysis.jsp=UTF-8
+encoding//WebRoot/WEB-INF/sales/qualityanalysis/qualityanalysis.jsp=UTF-8
+encoding//WebRoot/WEB-INF/sales/return/returned.jsp=UTF-8
+encoding//WebRoot/WEB-INF/sales/shipment/edit_taxboard.jsp=UTF-8
+encoding//WebRoot/WEB-INF/sales/shipment/edit_taxstampingparts.jsp=UTF-8
+encoding//WebRoot/WEB-INF/sales/shipment/taxboard.jsp=UTF-8
+encoding//WebRoot/WEB-INF/sales/shipment/taxstampingparts.jsp=UTF-8
+encoding//src/com/fjsdfx/starerp/common/bean/PagerFilter.java=UTF-8
+encoding//src/com/fjsdfx/starerp/common/service/BaseService.java=gb2312
+encoding/<project>=UTF-8

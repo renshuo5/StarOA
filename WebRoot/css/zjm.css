@@ -1,0 +1,48 @@
+@charset "utf-8";
+body {
+	font-size: 12pt;
+	Scrollbar-Face-Color: #A4C6F9;
+	Scrollbar-Highlight-Color: #A4C6F9;
+	Scrollbar-Shadow-Color: #A4C6F9;
+	Scrollbar-3Dlight-Color: 8080FF;
+	Scrollbar-Darkshadow-Color: 8080FF;
+	Scrollbar-Arrow-Color: FFffff;
+	Scrollbar-Track-Color: E6E6FF;
+	text-align: center;
+	background-image: url(../images/1111111.jpg);
+}
+
+
+.editTable {
+	border-color: #6f8ac4;
+	border-collapse: 1;
+	border-spacing: 2;
+	margin: auto;
+	padding: inherit;
+	width: 85%;
+	border: 0;
+}
+.title td {
+	background: url(../images/title_bg2.jpg);
+	color: #fff;
+	align: center;
+	text-align:center;
+}
+* {
+	font-family: "微软雅黑";
+}
+
+.list{
+ 	width:300px;
+ 	margin-left:0px;
+ 	border:1px;
+ 	
+}	
+.list td{
+   text-align:center;
+   height:25px
+}
+.list th{
+	text-align:right;
+	color:
+	}

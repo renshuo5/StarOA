@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="produce.task" location="0,0" size="0,0">
+    <action name="task_*" location="0,0" size="0,0">
+      <result name="add_input">
+        <resourceEdge source="add_input" routing="0" target="add_task.jsp" />
+      </result>
+      <result name="show_tree">
+        <resourceEdge source="show_tree" routing="0" target="task_tree.jsp" />
+      </result>
+    </action>
+  </package>
+  <package name="produce.productionwarehousing" location="0,0" size="0,0">
+    <action name="productionwarehousing_*" location="0,0" size="0,0">
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="productionwarehousinglist.jsp" />
+      </result>
+      <result name="examine_list">
+        <resourceEdge source="examine_list" routing="0" target="productionwarehousing_examinelist.jsp" />
+      </result>
+      <result name="examine_input">
+        <resourceEdge source="examine_input" routing="0" target="productionwarehousing_examine.jsp" />
+      </result>
+      <result name="show">
+        <resourceEdge source="show" routing="0" target="show_productionwarehousing.jsp" />
+      </result>
+      <result name="add_input">
+        <resourceEdge source="add_input" routing="0" target="add_productionwarehousing.jsp" />
+      </result>
+      <result name="return_list" />
+    </action>
+  </package>
+  <package name="produce.productionplan" location="0,0" size="0,0">
+    <action name="productionplan_*" location="0,0" size="0,0">
+      <result name="make" />
+      <result name="make_list" />
+      <result name="list" />
+      <result name="return_audit_list" />
+      <result name="audit_list" />
+      <result name="show" />
+      <result name="audit" />
+      <result name="tosearch" />
+      <result name="edit_input" />
+    </action>
+  </package>
+  <package name="produce.trackingtest" location="0,0" size="0,0">
+    <action name="trackingtest_*" location="0,0" size="0,0">
+      <result name="add_input" />
+      <result name="audit_list" />
+      <result name="list" />
+      <result name="show" />
+      <result name="wsaudit_input" />
+      <result name="proaudit_input" />
+      <result name="quaudit_input" />
+      <result name="edit_input" />
+      <result name="return_audit_list" />
+    </action>
+  </package>
+  <package name="produce.shortm" location="0,0" size="0,0">
+    <action name="shortm_*" location="0,0" size="0,0">
+      <result name="list" />
+      <result name="register_add" />
+      <result name="make_list" />
+      <result name="shortm_approve" />
+      <result name="edit_input" />
+      <result name="edit_shogood" />
+    </action>
+  </package>
+  <package name="produce.produceschdul" location="0,0" size="0,0">
+    <action name="produceschdul_*" location="0,0" size="0,0">
+      <result name="add_input" />
+      <result name="list" />
+      <result name="editinput" />
+      <result name="show" />
+      <result name="producelist" />
+      <result name="reworklist" />
+      <result name="examine" />
+      <result name="selectinput" />
+      <result name="listware" />
+    </action>
+  </package>
+  <package name="produce.preparation" location="0,0" size="0,0">
+    <action name="preparation_*" location="0,0" size="0,0">
+      <result name="list" />
+      <result name="examine_list" />
+      <result name="examine_input" />
+      <result name="pingongexamine_input" />
+      <result name="show" />
+      <result name="add_input" />
+      <result name="edit_input" />
+      <result name="return_list" />
+      <result name="return_examine_list" />
+    </action>
+  </package>
+  <webResource name="add_task.jsp" path="/WEB-INF/produce/add_task.jsp" location="0,0" size="0,0" />
+  <webResource name="task_tree.jsp" path="/WEB-INF/produce/task_tree.jsp" location="0,0" size="0,0" />
+  <webResource name="productionwarehousinglist.jsp" path="/WEB-INF/produce/productionwarehousinglist.jsp" location="0,0" size="0,0" />
+  <webResource name="productionwarehousing_examinelist.jsp" path="/WEB-INF/produce/productionwarehousing_examinelist.jsp" location="0,0" size="0,0" />
+  <webResource name="productionwarehousing_examine.jsp" path="/WEB-INF/produce/productionwarehousing_examine.jsp" location="0,0" size="0,0" />
+  <webResource name="show_productionwarehousing.jsp" path="/WEB-INF/produce/show_productionwarehousing.jsp" location="0,0" size="0,0" />
+  <webResource name="add_productionwarehousing.jsp" path="/WEB-INF/produce/add_productionwarehousing.jsp" location="0,0" size="0,0" />
+</Struts2Diagram>
+

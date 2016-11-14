@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="warehouse.task" namespace="/warehouse/task"
+		extends="struts-default">
+		<action name="task_*" method="{1}"
+			class="com.fjsdfx.starerp.warehouse.action.TaskAction">
+			<result name="add_input">/WEB-INF/warehouse/add_task.jsp</result>
+			<result name="show_tree">/WEB-INF/warehouse/task_tree.jsp</result>
+		</action>
+	</package>
+
+<!-- 成品入库（产品入库） -->
+<package name="warehouse.warehouse" namespace="/warehouse/warehouse"
+		extends="struts-default">
+	<global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		<action name="warehouse_*" method="{1}"
+			class="com.fjsdfx.starerp.warehouse.action.WarehouseAction">
+			<result name="list">/WEB-INF/warehouse/warehouse/productionwarehouselist.jsp</result>
+			<result name="examine_list">/WEB-INF/warehouse/warehouse/productionwarehouse_examinelist.jsp</result>
+			<result name="examine_input">/WEB-INF/warehouse/warehouse/productionwarehouse_examine.jsp</result>
+			<result name="show">/WEB-INF/warehouse/warehouse/show_productionwarehouse.jsp</result>
+			<result name="add_input">/WEB-INF/warehouse/warehouse/add_productionwarehouse.jsp</result>
+			<result name="edit_input">/WEB-INF/warehouse/warehouse/edit_productionwarehouse.jsp</result>
+			<result name="return_list" type="redirect">warehouse_list</result>
+		</action>
+	</package>
+
+<!-- 收料通知 -->
+<package name="warehouse.rewinder" namespace="/warehouse/rewinder"
+		extends="struts-default">
+	<global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		<action name="rewinder_*" method="{1}"
+			class="com.fjsdfx.starerp.warehouse.action.RewinderAction">
+			<result name="list">/WEB-INF/warehouse/rewinder/rewinderlist.jsp</result>
+			<result name="examine_list">/WEB-INF/warehouse/rewinder/rewinder_examinelist.jsp</result>
+			<result name="unqualify_list">/WEB-INF/warehouse/rewinder/rewinder_unqualifylist.jsp</result>
+			<result name="examine_input">/WEB-INF/warehouse/rewinder/rewinder_examine.jsp</result>
+			<result name="show">/WEB-INF/warehouse/rewinder/show_rewinder.jsp</result>
+			<result name="add_input">/WEB-INF/warehouse/rewinder/add_rewinderreq.jsp</result>
+			<result name="add_input2">/WEB-INF/warehouse/rewinder/add_rewinder.jsp</result>
+			<result name="add_input3">/WEB-INF/warehouse/rewinder/add_rewinderpur.jsp</result>
+			<result name="edit_input">/WEB-INF/warehouse/rewinder/edit_rewinder.jsp</result>
+			<result name="return_list" type="redirect">rewinder_list</result>
+		</action>
+		
+	</package>
+	
+<!-- 进料验收 -->
+<package name="warehouse.feedexamine" namespace="/warehouse/feedexamine"
+		extends="struts-default">
+	<global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		<action name="feedexamine_*" method="{1}"
+			class="com.fjsdfx.starerp.warehouse.action.FeedexamineAction">
+			<result name="list">/WEB-INF/warehouse/feedexamine/feedexaminelist.jsp</result>
+			<result name="unqualify_list">/WEB-INF/warehouse/feedexamine/feedexamine_unqualifylist.jsp</result>
+			<result name="examine_list">/WEB-INF/warehouse/feedexamine/feedexamine_examinelist.jsp</result>
+			<result name="examine_input">/WEB-INF/warehouse/feedexamine/feedexamine_examine.jsp</result>
+			<result name="show">/WEB-INF/warehouse/feedexamine/show_feedexamine.jsp</result>
+			<result name="add_input">/WEB-INF/warehouse/feedexamine/add_feedexamine.jsp</result>
+			<result name="add_input2">/WEB-INF/warehouse/feedexamine/add_feedexaminepur.jsp</result>
+			<result name="edit_input">/WEB-INF/warehouse/feedexamine/edit_feedexamine.jsp</result>
+			<result name="confirm_input">/WEB-INF/warehouse/feedexamine/confirm_feedexamine.jsp</result>
+			<result name="return_list" type="redirect">feedexamine_list</result>
+		</action>
+		
+	</package>
+	
+	<!--入库调度-->
+	<package name="warehouse.storescheduling" namespace="/warehouse/storescheduling"
+		extends="struts-default">
+	<global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		<action name="storescheduling_*" method="{1}"
+			class="com.fjsdfx.starerp.warehouse.action.StoreschedulingAction">
+			<result name="list">/WEB-INF/warehouse/storescheduling/storeschedulinglist.jsp</result>
+			<result name="add_warehouse">/WEB-INF/warehouse/storescheduling/add_stoschwarehouse.jsp</result>
+			<result name="add_rewinder">/WEB-INF/warehouse/storescheduling/add_stoschrewinder.jsp</result>
+			<result name="add_feedexamine">/WEB-INF/warehouse/storescheduling/add_stoschfeedexamine.jsp</result>
+			<result name="return_list" type="redirect">storescheduling_list</result>
+		</action>
+		
+	</package>
+	
+<!-- 领料 -->
+<package name="warehouse.requisition" namespace="/warehouse/requisition"
+		extends="struts-default">
+	<global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		<action name="requisition_*" method="{1}"
+			class="com.fjsdfx.starerp.warehouse.action.RequisitionAction">
+			<result name="list">/WEB-INF/warehouse/requisition/requisitionlist.jsp</result>
+			<result name="examine_list">/WEB-INF/warehouse/requisition/requisition_examinelist.jsp</result>
+			<result name="examine_input">/WEB-INF/warehouse/requisition/requisition_examine.jsp</result>
+			<result name="show">/WEB-INF/warehouse/requisition/show_requisition.jsp</result>
+			<result name="add_input">/WEB-INF/warehouse/requisition/add_requisition.jsp</result>
+			<result name="edit_input">/WEB-INF/warehouse/requisition/edit_requisition.jsp</result>
+			<result name="return_list" type="redirect">requisition_list</result>
+		</action>
+		
+	</package>
+	
+	
+	<!-- 库存查询 -->
+	<package name="warehouse.stock" namespace="/warehouse/stock"
+		extends="struts-default">
+	<global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		<action name="stock_*" method="{1}"
+			class="com.fjsdfx.starerp.warehouse.action.StockAction">
+			<result name="generallist">/WEB-INF/warehouse/stock/stockgenerallist.jsp</result>
+			<result name="bondedlist">/WEB-INF/warehouse/stock/stockbondedlist.jsp</result>
+			<result name="return_list" type="redirect">requisition_generallist</result>
+		</action>
+		
+	</package>
+	
+	<!-- 盘点 -->
+	<package name="warehouse.inventory" namespace="/warehouse/inventory"
+		extends="struts-default">
+	<global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		<action name="inventory_*" method="{1}"
+			class="com.fjsdfx.starerp.warehouse.action.InventoryAction">
+			<result name="list">/WEB-INF/warehouse/inventory/inventorylist.jsp</result>
+			<result name="return_list" type="redirect">inventory_list</result>
+		</action>
+		
+	</package>
+	
+	<!-- 物料台账 -->
+	<package name="warehouse.maccounting" namespace="/warehouse/maccounting"
+		extends="struts-default">
+	<global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		<action name="maccounting_*" method="{1}"
+			class="com.fjsdfx.starerp.warehouse.action.MaccountingAction">
+			<result name="list">/WEB-INF/warehouse/maccounting/maccountinglist.jsp</result>
+			<result name="return_list" type="redirect">maccounting_list</result>
+		</action>
+		
+	</package>
+	
+	<!-- 辅助材料 -->
+	<package name="warehouse.auxmaterial" namespace="/warehouse/auxmaterial"
+		extends="struts-default">
+	<global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		<action name="auxmaterial_*" method="{1}"
+			class="com.fjsdfx.starerp.warehouse.action.AuxmaterialAction">
+			<result name="list">/WEB-INF/warehouse/auxmaterial/auxmateriallist.jsp</result>
+			<result name="add_input">/WEB-INF/warehouse/auxmaterial/add_auxmaterial.jsp</result>
+			<result name="return_list" type="redirect">auxmaterial_list</result>
+		</action>
+		
+	</package>
+	
+	<!-- 配套发料表start -->
+	<package name="warehouse.supsendm" namespace="/warehouse/supsendm"
+		extends="struts-default">
+	<global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		<action name="supsendm_*" method="{1}"
+			class="com.fjsdfx.starerp.warehouse.action.SupsendmAction">
+			<result name="list">/WEB-INF/warehouse/supsendm/supsendmlist.jsp</result>
+			<result name="input">/WEB-INF/item/select_itemtype.jsp</result>
+			<result name="addsingle_input">/WEB-INF/warehouse/supsendm/addsupsendm.jsp</result>
+			<result name="add_input">/WEB-INF/warehouse/supsendm/addsupsendm_default.jsp</result>
+			<result name="update_input">/WEB-INF/warehouse/supsendm/editsupsendm.jsp</result>
+			<result name="preparation_list">/WEB-INF/warehouse/supsendm/preparationlist.jsp</result>
+			<result name="selected_preparation">/WEB-INF/warehouse/supsendm/preparation.jsp</result>
+		</action>
+	</package>
+	<!-- 配套发料表end -->
+	
+	<!-- 配套发料表3start -->
+	<package name="warehouse.supsendm3" namespace="/warehouse/supsendm3"
+		extends="struts-default">
+		<global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		<action name="supsendm3_*" method="{1}"
+			class="com.fjsdfx.starerp.warehouse.action.Supsendm3Action">
+			<result name="list">/WEB-INF/warehouse/supsendm/supsendm3list.jsp</result>
+			<result name="input">/WEB-INF/item/select_itemtype.jsp</result>
+			<result name="add_input">/WEB-INF/warehouse/supsendm/addsupsendm3.jsp</result>
+			<result name="addExtra_input">/WEB-INF/warehouse/supsendm/addsupsendm3.jsp</result>
+			<result name="edit_input">/WEB-INF/warehouse/supsendm/editsupsendm3.jsp</result>
+			<result name="preparation_list">/WEB-INF/warehouse/supsendm/preparationlist.jsp</result>
+			<result name="confirm_input">/WEB-INF/warehouse/supsendm/supsendm3confirmInput.jsp</result>
+			<result name="selected_preparation">/WEB-INF/warehouse/supsendm/preparation3.jsp</result>
+		</action>
+	</package>
+	<!-- 配套发料表3end -->
+	
+	<!-- 物料变异申请单start -->
+	<package name="warehouse.variation" namespace="/warehouse/variation"
+		extends="struts-default">
+	<global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		<action name="variation_*" method="{1}"
+			class="com.fjsdfx.starerp.warehouse.action.VariationAction">
+			<result name="list">/WEB-INF/warehouse/variation/variationlist.jsp</result>
+			<result name="auditlist">/WEB-INF/warehouse/variation/audit_variationlist.jsp</result>
+			<result name="audit">/WEB-INF/warehouse/variation/pgdpt_audit_variation.jsp</result>
+			<result name="audit_result" type="redirect">/warehouse/variation/variation_auditlist</result>
+			<result name="input">/WEB-INF/item/select_itemtype.jsp</result>
+			<result name="cscheck" type="redirect">/warehouse/variation/variation_list</result>
+			<result name="clist">/WEB-INF/warehouse/variation/variationchange_list.jsp</result><!--
+			<result name="ccheck" >/WEB-INF/warehouse/variation/variationchange_list.jsp</result>
+			-->
+				<result name="ccheck" type="redirect">/warehouse/variation/variation_clist</result>
+			<result name="cshow">/WEB-INF/warehouse/variation/Showchange_variation.jsp</result>
+			<result name="csshow">/WEB-INF/warehouse/variation/Showchangesure_variation.jsp</result>
+			<result name="add_input">/WEB-INF/warehouse/variation/add_variation.jsp</result>
+			<result name="edit_input">/WEB-INF/warehouse/supsendm/editsupsendm.jsp</result>
+			
+		</action>
+	</package>
+	<!-- 物料变异申请单end -->
+	<!-- json start -->
+    <!-- itemType start -->
+    <package name="supsendm.ajax" namespace="/warehouse/supsendmverify" extends="json-default">
+    	<action name="supsendm_*" class="com.fjsdfx.starerp.warehouse.action.SupsendmAction" method="{1}">
+			<result type="json">
+			    
+			</result>
+            <result name="input">/WEB-INF/item/select_itemtype.jsp</result>
+		</action>
+    </package>
+<!-- json end -->	
+</struts>

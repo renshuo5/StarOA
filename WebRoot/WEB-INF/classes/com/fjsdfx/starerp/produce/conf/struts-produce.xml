@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+  
+	<package name="produce.task" namespace="/produce/task"
+		extends="struts-default">
+		<action name="task_*" method="{1}"
+			class="com.fjsdfx.starerp.produce.action.TaskAction">
+			<result name="add_input">/WEB-INF/produce/add_task.jsp</result>
+			<result name="show_tree">/WEB-INF/produce/task_tree.jsp</result>
+		</action>
+	</package>
+
+
+<package name="produce.productionwarehousing" namespace="/produce/productionwarehousing"
+		extends="struts-default">
+	<global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+			<result name="audit_false">/403.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		<action name="productionwarehousing_*" method="{1}"
+			class="com.fjsdfx.starerp.produce.action.ProductionWarehousingAction">
+			<result name="list">/WEB-INF/produce/productionwarehousinglist.jsp</result>
+			<result name="examine_list">/WEB-INF/produce/productionwarehousing_examinelist.jsp</result>
+			<result name="examine_input">/WEB-INF/produce/productionwarehousing_examine.jsp</result>
+			<result name="show">/WEB-INF/produce/show_productionwarehousing.jsp</result>
+			<result name="add_input">/WEB-INF/produce/add_productionwarehousing.jsp</result>
+			
+<!--			<result name="edit_input">/WEB-INF/annoucement/edit_annoucement.jsp</result>-->
+	<result name="return_list" type="redirect">productionwarehousing_list</result>
+		</action>
+	</package>
+<package name="produce.productionplan" namespace="/produce/productionplan"
+		extends="struts-default">
+	<global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		<action name="productionplan_*" method="{1}"
+			class="com.fjsdfx.starerp.produce.action.ProductionPlanAction">
+			<!--以下生产计划的各种-->
+	
+		<result name="make">/WEB-INF/produce/productionplan/goods_askingfor_single.jsp</result>
+			<result name="make_list">/WEB-INF/produce/productionplan/addproductionplan.jsp</result>
+			<result name="list">/WEB-INF/produce/productionplan/productplanchecklistshow.jsp</result>
+			<result name="return_audit_list" type="redirect" >productionplan_audit_list</result>
+			<result name="audit_list">/WEB-INF/produce/productionplan/productplanchecklist.jsp</result>
+			<result name="show">/WEB-INF/produce/productionplan/monthlyproplan_show.jsp</result>
+			<result name="audit">/WEB-INF/produce/productionplan/monthlyproplanapprove.jsp</result>
+			<result name="auditAgain">/WEB-INF/produce/productionplan/monthlyproplanapproveAgain.jsp</result>
+			<result name="tosearch">/WEB-INF/produce/productionplan/productionplanlist.jsp</result>
+			<result name="edit_input">/WEB-INF/produce/productionplan/updateproductionplan.jsp</result>
+			<result name="selectItem">/WEB-INF/item/select_item.jsp</result>
+		</action>
+	</package><!--
+量试计划action+
+
+	--><package name="produce.trackingtest" namespace="/produce/trackingtest"
+		extends="struts-default">
+	<global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		<action name="trackingtest_*" method="{1}"
+			class="com.fjsdfx.starerp.produce.action.TrackingtestAction">
+		<result name="add_input">/WEB-INF/produce/trackingtest/addtrackingtest.jsp</result>
+		<result name="audit_list">/WEB-INF/produce/trackingtest/testtrackingauditlist.jsp</result>
+		<result name="list">/WEB-INF/produce/trackingtest/testtrackinglist.jsp</result>
+		<result name="show">/WEB-INF/produce/trackingtest/trackingtestshow.jsp</result>
+		<result name="wsaudit_input">/WEB-INF/produce/trackingtest/testtrackingwsaudit.jsp</result>
+		<result name="proaudit_input">/WEB-INF/produce/trackingtest/trackingtestproaudit.jsp</result>
+		<result name="quaudit_input">/WEB-INF/produce/trackingtest/trackingtestquaaudit.jsp</result>
+		<result name="edit_input">/WEB-INF/produce/trackingtest/trackingtestupdate.jsp</result>
+		<result name="return_audit_list" type="redirect">trackingtest_audit_list</result>
+		<result name="wsshow">/WEB-INF/produce/trackingtest/trackingtestwsshow.jsp</result>
+		</action>
+	</package>
+	
+	<!--      缺料  -->
+	<package name="produce.shortm" namespace="/produce/shortm"
+		extends="struts-default">
+		<global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception"
+				exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception"
+				exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		<action name="shortm_*" method="{1}" 
+		class="com.fjsdfx.starerp.produce.action.ShortmAction">
+		<result name="list">/WEB-INF/produce/shortm/shortm_list.jsp</result>
+		<result name="register_add">/WEB-INF/produce/shortm/shortm_register.jsp</result>
+		<result name="make_list">/WEB-INF/produce/shortm/shortm_makelist.jsp</result>
+		<result name="shortm_approve">/WEB-INF/produce/shortm/shortm_approve.jsp</result>
+		<result name="edit_input">/WEB-INF/produce/shortm/shortm_editlist.jsp</result>
+		<result name="edit_shogood">/WEB-INF/produce/shortm/shogood_editlist.jsp</result>
+		
+		</action>
+		
+	</package>
+	<package name="produce.produceschdul" namespace="/produce/produceschdul"
+		extends="struts-default">
+		<global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception"
+				exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception"
+				exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		<action name="produceschdul_*" method="{1}"
+			class="com.fjsdfx.starerp.produce.action.ProductionSchdulAction">
+			<!--以下生产调度的各种-->
+
+			<result name="add_input">/WEB-INF/produce/produceschdul/add_produceschdul.jsp
+			</result>
+			<result name="list">/WEB-INF/produce/produceschdul/list_produceschdul.jsp
+			</result>
+			<result name="editinput">/WEB-INF/produce/produceschdul/edit_produceschdul.jsp
+			</result>
+			<result name="show">/WEB-INF/produce/produceschdul/show_produceschdul.jsp
+			</result>
+			<result name="producelist">/WEB-INF/produce/produceschdul/producelist_produceschdul.jsp
+			</result>
+    		<result name="examine_wait">/WEB-INF/produce/produceschdul/examine_produceschdul.jsp
+			</result>
+			<result name="return_list" type="redirect">produceschdul_list
+			</result>
+			<result name="return_listware" type="redirect">produceschdul_listware
+			</result>
+            <result name="examine_sent">/WEB-INF/produce/produceschdul/examinesent_produceschdul.jsp
+			</result>
+			<result name="examine_change">/WEB-INF/produce/produceschdul/examinechange_produceschdul.jsp
+			</result>
+			<result name="showsupsendm">/WEB-INF/produce/produceschdul/showsupsendm_produceschdul.jsp
+			</result>
+			<result name="showsupsendm3">/WEB-INF/produce/produceschdul/showsupsendm3_produceschdul.jsp
+			</result>
+			<result name="supsendm_list">/WEB-INF/produce/produceschdul/supsendmlist.jsp
+			</result>
+			<result name="supsendm3_list">/WEB-INF/produce/produceschdul/supsendm3list.jsp
+			</result>
+			<result name="selectinput">/WEB-INF/persons/employee/select_employee.jsp
+			</result>
+			<result name="listware">/WEB-INF/produce/produceschdul/listware_proware.jsp
+			</result>
+			
+			
+		</action>
+	</package>
+	
+	<!-- 要货计划单 -->
+	<package name="produce.preparation" namespace="/produce/preparation"
+		extends="struts-default">
+		<global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception"
+				exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception"
+				exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+
+		<action name="preparation_*" method="{1}"
+			class="com.fjsdfx.starerp.produce.action.PreparationAction">
+			<result name="list">/WEB-INF/produce/preparationlist.jsp
+			</result>
+			<result name="pass">/WEB-INF/produce/productplan.jsp
+			</result>
+			<result name="examine_list">/WEB-INF/produce/preparation_examinelist.jsp
+			</result>
+			<result name="examine_list_insider">/WEB-INF/produce/preparation_examinelist_insideOrder.jsp
+			</result>
+			<result name="examine_input">/WEB-INF/produce/preparation_examine.jsp
+			</result>
+			<result name="pingongexamine_input">/WEB-INF/produce/preparation_pingongexamine.jsp
+			</result>
+			<result name="pingongexamine_inputInside">/WEB-INF/produce/preparation_pingongexamineInside.jsp
+			</result>
+			<result name="produceexamine_input">/WEB-INF/produce/preparation_produceexamine.jsp
+			</result>
+			<result name="produceexamine_inputInside">/WEB-INF/produce/preparation_produceexamineInside.jsp
+			</result>
+			<result name="show">/WEB-INF/produce/show_preparation.jsp
+			</result>
+			<result name="add_input">/WEB-INF/produce/add_preparation.jsp
+			</result>
+			<result name="edit_input">/WEB-INF/produce/edit_preparation.jsp
+			</result>
+			<result name="fulfill_input">/WEB-INF/produce/fulfill_preparation.jsp
+			</result>
+			<result name="confimation_input">/WEB-INF/produce/confimation_preparation.jsp
+			</result>
+			<result name="return_list" type="redirect">preparation_list
+			</result>
+			<result name="return_examine_list" type="redirect">preparation_examineList</result>
+			<result name="return_examine_insideOrderlist" type="redirect">preparation_printexamineListInsider</result>
+			<result name="selectItem">/WEB-INF/item/select_item.jsp
+			</result>
+			
+		</action>
+	</package>
+	<!-- 维修品管理 -->
+<package name="produce.repairproduction" namespace="/produce/repairproduction"
+		extends="struts-default">
+	<global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		<action name="repairproduction_*" method="{1}"
+			class="com.fjsdfx.starerp.produce.action.RepairProductionAction">
+			<result name="list">/WEB-INF/produce/productionrepair/repairproductionlist.jsp</result>
+			<result name="edit_input">/WEB-INF/produce/productionrepair/edit_repairproduction.jsp</result>
+			<result name="select_input">/WEB-INF/produce/productionrepair/select_repairproduction.jsp</result>
+			<result name="show">/WEB-INF/produce/productionrepair/show_repairproduction.jsp</result>
+			<result name="add_input">/WEB-INF/produce/productionrepair/add_repairproduction.jsp</result>
+			
+<!--			<result name="edit_input">/WEB-INF/annoucement/edit_annoucement.jsp</result>-->
+	<result name="return_list" type="redirect">repairproduction_list</result>
+		</action>
+			</package>
+			
+
+	
+	<!-- 报废审核 -->
+
+	<package name="produce.discardverify" namespace="/produce/discardverify"
+		extends="struts-default">
+	<global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		<action name="discardverify_*" method="{1}"
+			class="com.fjsdfx.starerp.produce.action.DiscardverifyAction">
+			<result name="list">/WEB-INF/produce/discardverify/discardverify_applicationlist.jsp</result>
+			<result name="first_list">/WEB-INF/produce/discardverify/discardverifylist.jsp</result>
+			<result name="zj_list">/WEB-INF/produce/discardverify/discardverify_zjlist.jsp</result>
+			<result name="return_zjlist" type="redirect">discardverify_zjlist</result>
+			<result name="f_input">/WEB-INF/produce/discardverify/discardverify_applicationonelist.jsp</result>
+			<result name="s_input">/WEB-INF/produce/discardverify/discardverify_applicationtwolist.jsp</result>
+			<result name="t_input">/WEB-INF/produce/discardverify/discardverify_applicationthreelist.jsp</result>
+			<result name="warehouselist">/WEB-INF/warehouse/requisition/requisitionlist.jsp</result>
+			
+<!--			<result name="edit_input">/WEB-INF/annoucement/edit_annoucement.jsp</result>-->
+	<result name="return_list" type="redirect">discardverify_list</result>
+		</action>
+	</package>
+	<!--生产日报表-->
+	<package name="produce.dailyproduction" namespace="/produce/dailyproduction" extends="struts-default">
+	<global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		<action name="dailyproduction_*" method="{1}"
+			class="com.fjsdfx.starerp.produce.action.DailyProductionAction">
+			<result name="list">/WEB-INF/produce/dailyproduction/dailyproductionlist.jsp</result>
+			<result name="add">/WEB-INF/produce/dailyproduction/dailyproductionadd.jsp</result>
+			<result name="formlist">/WEB-INF/produce/dailyproduction/dailyproductionformlist.jsp</result>
+			
+			
+		</action>
+	</package>
+	<!-- json start -->
+	<!-- dailyprooduction start -->	
+	<package name="dailyprooduction.ajax" namespace="/produce/dailyproductionajax" extends="json-default">
+    	<action name="dailyproduction_*" class="com.fjsdfx.starerp.produce.action.DailyProductionAction" method="{1}">
+			<result type="json">
+			
+			</result>
+		</action>
+    </package>
+    <!--dailyprooduction end -->
+    <!-- 订单ajax start -->
+    <package name="preparation.ajax" namespace="/produce/preparationajax" extends="json-default">
+    	<action name="preparation_*" class="com.fjsdfx.starerp.produce.action.PreparationAction" method="{1}">
+			<result type="json">
+			
+			</result>
+		</action>
+    </package>
+    <!-- 订单ajax end -->
+	<!-- json end -->
+</struts>

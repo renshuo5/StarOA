@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="index" location="0,0" size="0,0">
+    <action name="index" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="index.jsp" />
+      </result>
+    </action>
+    <action name="header" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="header.jsp" />
+      </result>
+    </action>
+    <action name="personalCenter" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="personalCenter.htm" />
+      </result>
+    </action>
+    <action name="navigate" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="main" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+  </package>
+  <webResource name="index.jsp" path="/WEB-INF/controlcenter/index.jsp" location="0,0" size="0,0" />
+  <webResource name="header.jsp" path="/WEB-INF/controlcenter/header.jsp" location="0,0" size="0,0" />
+  <webResource name="personalCenter.htm" path="/WEB-INF/controlcenter/personalCenter.htm" location="0,0" size="0,0" />
+</Struts2Diagram>
+

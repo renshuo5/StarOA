@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<!--发货通知	-->
+	<package name="sales.shipment.shinote2" namespace="/sales/shipment/shinote2"
+		extends="struts-default">
+	    <global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		<action name="shinote2_*" method="{1}"
+			class="com.fjsdfx.starerp.sales.action.Shinote2Action">
+			<result name="list">/WEB-INF/sales/shipment/shinote2list.jsp</result>
+			<result name="show">/WEB-INF/sales/shipment/show_shinote2.jsp</result>
+			<result name="add_input">/WEB-INF/sales/shipment/shinote2.jsp</result>
+			<result name="return_list" type="redirect">shinote2_list</result>
+			<result name="examine_list">/WEB-INF/sales/shipment/shinote2_examinelist.jsp</result>
+			<result name="examine_input">/WEB-INF/sales/shipment/shinote2_examine.jsp</result>
+			<result name="edit_input">/WEB-INF/sales/shipment/edit_shinote2.jsp</result>
+		</action>
+	</package>
+	
+	<!--外协件发货通知	-->
+		<package name="sales.shipment.shippingnote1" namespace="/sales/shipment/shippingnote1"
+		extends="struts-default">
+	    <global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		<action name="shippingnote1_*" method="{1}"
+			class="com.fjsdfx.starerp.sales.action.Shippingnote1Action">
+			<result name="list">/WEB-INF/sales/shipment/shippingnote1list.jsp</result>
+			<result name="show">/WEB-INF/sales/shipment/show_shippingnote1.jsp</result>
+			<result name="add_input">/WEB-INF/sales/shipment/shippingnote1.jsp</result>
+			<result name="return_list" type="redirect">shippingnote1_list</result>
+			<result name="return_qualitylist" type="redirect">shippingnote1_qualityList</result>
+			<result name="return_examinelist" type="redirect">shippingnote1_examineList</result>
+			<result name="return_shi1goodlist" type="redirect">shippingnote1_shi1goodList</result>
+			<result name="examine_input">/WEB-INF/sales/shipment/shippingnote1_examine.jsp</result>
+			<result name="edit_input">/WEB-INF/sales/shipment/edit_shippingnote1.jsp</result>
+			<result name="examine_list">/WEB-INF/sales/shipment/shippingnote1_examinelist.jsp</result>
+			<result name="shi1good_list">/WEB-INF/sales/shipment/shi1good_list.jsp</result>
+			<result name="taxboard_input">/WEB-INF/sales/shipment/taxboard.jsp</result>
+			<result name="quality_list">/WEB-INF/sales/shipment/quality_list.jsp</result>
+			<result name="taxstam_input">/WEB-INF/sales/shipment/taxstampingparts.jsp</result>
+			<result name="show_tas">/WEB-INF/sales/shipment/edit_taxstampingparts.jsp</result>
+			<result name="show_tax">/WEB-INF/sales/shipment/edit_taxboard.jsp</result>
+			
+		</action>
+	</package>
+
+   <!--退货报告单-->
+		<package name="sales.return.returned" namespace="/sales/return/returned"
+		extends="struts-default">
+	    <global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		<action name="returned_*" method="{1}"
+			class="com.fjsdfx.starerp.sales.action.ReturnedAction">
+			<result name="list">/WEB-INF/sales/unqualified/unqualified_list.jsp</result>
+			<result name="show">/WEB-INF/sales/return/show_returned.jsp</result>
+			<result name="add_input">/WEB-INF/sales/return/returned.jsp</result>
+			<result name="return_list" type="redirect">returned_list</result>
+			<result name="examine_input">/WEB-INF/sales/return/returned_whexamine.jsp</result>
+			<result name="return_qaualitylist" type="redirect">returned_qualityList</result>
+			<result name="return_examinelist" type="redirect">returned_examineList</result>
+			<result name="quality_input">/WEB-INF/sales/return/returned_qualityexamine.jsp</result>
+			<result name="edit_input">/WEB-INF/sales/return/edit_returned.jsp</result>
+			<result name="examine_list">/WEB-INF/sales/return/returned_examinelist.jsp</result>
+			<result name="quality_list">/WEB-INF/sales/return/returned_qualitylist.jsp</result>
+			<result name="qualityanalysis_input">/WEB-INF/sales/return/qualityanalysis.jsp</result>
+			<result name="rmtotal_input">/WEB-INF/sales/return/rmtotal.jsp</result>
+		</action>
+	</package>
+	
+	<!--退货质量分析-->
+		<package name="sales.return.qualityanalysis" namespace="/sales/return/qualityanalysis"
+		extends="struts-default">
+	    <global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		<action name="qualityanalysis_*" method="{1}"
+			class="com.fjsdfx.starerp.sales.action.QualityanalysisAction">
+			<result name="list">/WEB-INF/sales/qualityanalysis/qualityanalysis_list.jsp</result>
+			<result name="show">/WEB-INF/sales/qualityanalysis/show_qualityanalysis.jsp</result>
+			<result name="add_input">/WEB-INF/sales/qualityanalysis/qualityanalysis.jsp</result>
+			<result name="edit_input">/WEB-INF/sales/qualityanalysis/edit_qualityanalysis.jsp</result>
+		    <result name="return_list" type="redirect">qualityanalysis_list</result>
+			
+		</action>
+	</package>
+	
+	 <!-- 退货统计--> 
+    <package name="sales.return.rmtotal" namespace="/sales/return/rmtotal" extends="struts-default">
+  		<global-results>
+	  		<result name="pub_del_success">/common/pub_del_success.jsp</result> 
+	  		<result name="pub_add_success">/common/pub_add_success.jsp</result> 
+	  		<result name="pub_update_success">/common/pub_update_success.jsp</result> 
+			<result name="pub_exception">/common/pub_exception.jsp</result> 
+		</global-results>
+	<global-exception-mappings>
+	  <exception-mapping result="pub_exception" exception="java.lang.Exception" /> 
+	  <exception-mapping result="pub_exception" exception="java.lang.DelException" /> 
+	  </global-exception-mappings>
+	  <action name="rmtotal_*" method="{1}" class="com.fjsdfx.starerp.sales.action.RmtotalAction">
+		    <result name="list">/WEB-INF/sales/rmtotal/rmtotal_list.jsp</result> 
+		    <result name="show">/WEB-INF/sales/rmtotal/show_rmtotal.jsp</result> 
+		    <result name="add_input">/WEB-INF/sales/rmtotal/rmtotal.jsp</result> 
+		    <result name="edit_input">/WEB-INF/sales/rmtotal/edit_rmtotal.jsp</result> 
+		    <result name="return_list" type="redirect">rmtotal_list</result> 
+	  </action>
+    </package>
+	
+	
+	<!--不合格单	-->
+	<package name="sales.return.unqualified" namespace="/sales/return/unqualified"
+		extends="struts-default">
+	    <global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		<action name="unqualified_*" method="{1}"
+			class="com.fjsdfx.starerp.sales.action.UnqualifiedAction">
+			<result name="list">/WEB-INF/sales/unqualified/unqualified_list.jsp</result>
+			<result name="show">/WEB-INF/sales/unqualified/show_unqualified.jsp</result>
+			<result name="add_input">/WEB-INF/sales/unqualified/unqualified.jsp</result>
+			<result name="return_list" type="redirect">shinote2_list</result>
+			<result name="examine_list">/WEB-INF/sales/unqualified/shinote2_examinelist.jsp</result>
+			<result name="examine_input">/WEB-INF/sales/unqualified/shinote2_examine.jsp</result>
+			<result name="edit_input">/WEB-INF/sales/unqualified/edit_shinote2.jsp</result>
+			<result name="recheck">/WEB-INF/sales/unqualified/recheck_unqualified.jsp</result>
+			<result name="torechcek" type="redirect">unqualified_list</result>
+			<result name="recheckpgb">/WEB-INF/sales/unqualified/recheckpgb_unqualified.jsp</result>
+			<result name="torecheckpgb"  type="redirect">/sales/return/returned/returned_qualityList</result>
+		</action>
+	</package>
+
+
+</struts>
